@@ -1,0 +1,153 @@
+{
+  "pcbHeight": 87,
+  "pcbWidth": 160,
+  "connector": {
+    "schematicName": "connector_raspberrypi",
+    "netsAvailabe": [
+      "4",
+      "17",
+      "27",
+      "22",
+      "5",
+      "6",
+      "13",
+      "26",
+      "18",
+      "23",
+      "24",
+      "25",
+      "12",
+      "16",
+      "19",
+      "20",
+      "21",
+      "2",
+      "3",
+      "9",
+      "10",
+      "11",
+      "8",
+      "14",
+      "15",
+      "3.3V",
+      "5V"
+    ],
+    "partsPosition": {
+      "part_0": {
+        "componentName": "J1",
+        "componentX": 67.5,
+        "componentY": 4.5
+      }
+    }
+  },
+  "modules": {
+    "module_0": {
+      "schematicName": "tactile_push_button_thruhole",
+      "interfaces": {
+        "iface_0": {
+          "GPIO": "4",
+          "type": "gpio"
+        }
+      },
+      "partsPosition": {
+        "part_0": {
+          "componentName": "S1",
+          "componentX": 107,
+          "componentY": 8
+        },
+        "part_1": {
+          "componentName": "R1",
+          "componentX": 115.6,
+          "componentY": 8.8
+        }
+      }
+    },
+    "module_1": {
+      "schematicName": "motorized_potentiometer",
+      "interfaces": {
+        "iface_0": {
+          "MOTORA": "17",
+          "type": "gpio"
+        },
+        "iface_1": {
+          "MOTORB": "27",
+          "type": "gpio"
+        },
+        "iface_2": {
+          "TOUCH": "22",
+          "type": "gpio"
+        },
+        "iface_3": {
+          "device": "/dev/i2c-1",
+          "type": "i2c",
+          "SDA": "2",
+          "SCL": "3"
+        }
+      },
+      "partsPosition": {
+        "part_0": {
+          "componentName": "U1",
+          "componentX": 78,
+          "componentY": 59.5
+        },
+        "part_1": {
+          "componentName": "U2",
+          "componentX": 79.5,
+          "componentY": 30
+        },
+        "part_2": {
+          "componentName": "U3",
+          "componentX": 48,
+          "componentY": 26.5
+        },
+        "part_3": {
+          "componentName": "U4",
+          "componentX": 20.5,
+          "componentY": 29.5
+        }
+      }
+    },
+    "module_2": {
+      "schematicName": "tactile_push_button_thruhole",
+      "interfaces": {
+        "iface_0": {
+          "GPIO": "5",
+          "type": "gpio"
+        }
+      },
+      "partsPosition": {
+        "part_0": {
+          "componentName": "S1",
+          "componentX": 107,
+          "componentY": 20
+        },
+        "part_1": {
+          "componentName": "R1",
+          "componentX": 115.6,
+          "componentY": 19.8
+        }
+      }
+    },
+    "module_3": {
+      "schematicName": "tactile_push_button_thruhole",
+      "interfaces": {
+        "iface_0": {
+          "GPIO": "6",
+          "type": "gpio"
+        }
+      },
+      "partsPosition": {
+        "part_0": {
+          "componentName": "S1",
+          "componentX": 107,
+          "componentY": 35
+        },
+        "part_1": {
+          "componentName": "R1",
+          "componentX": 116.6,
+          "componentY": 34.8
+        }
+      }
+    }
+  }
+}
