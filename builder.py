@@ -7,21 +7,19 @@ Builds EAGLE boards for Appliancizer.
     Must add "part name field to connector.partpositions"
 
 Usage:
-  builder.py [-v | --debug] JSON_FILE
+  builder.py [-i | -v | --debug] JSON_FILE
 
 Options:
   --debug    Debugging output.
   -v         Verbose output.
+  -i         Next argument is input.
 """
 
 
 import json
-
-
+import os
 from docopt import docopt
-
-
-from Swoop.Swoop import Swoop
+from Swoop import Swoop
 
 def rebuildBoardConnections(sch, brd):
     """
@@ -151,8 +149,15 @@ def debug_print(*args, sep=' ', end='\n', file=None):
 def main(arguments):
     debug_mode = arguments['--debug'] or arguments['-v']
 
-    with open(arguments['JSON_FILE'], 'r') as f:
-        device_spec = json.loads(f.read())
+    # Python program path
+    pyPath = os.path.dirname(os.path.realpath(__file__)) + "/"
+
+    if arguments['-i'] is True:
+        device_spec = json.loads(arguments['JSON_FILE'])
+    else:
+        with open(arguments['JSON_FILE'], 'r') as f:
+            device_spec = json.loads(f.read())
+
     debug_print(device_spec)
 
     schematic_bases = {}
@@ -164,8 +169,9 @@ def main(arguments):
         debug_print(module_name, module_info)
 
         schematic_name = module_info['schematicName']
+        print('Schematic name: '+ schematic_name)
         if schematic_name not in schematic_bases: # get the base schematic
-            schematic_bases[schematic_name] = Swoop.EagleFile.from_file(schematic_name + '.sch')
+            schematic_bases[schematic_name] = Swoop.EagleFile.from_file(pyPath + schematic_name + '.sch')
         unique_schematics[module_name] = schematic_bases[schematic_name].clone() # save a copy for the module
 
         renamed_nets[module_name] = set()
@@ -272,7 +278,7 @@ def main(arguments):
 
     # make board
     template_brd_filename = 'template.brd'
-    template_brd = Swoop.EagleFile.from_file(template_brd_filename)
+    template_brd = Swoop.EagleFile.from_file(pyPath + template_brd_filename)
     board = build_board_from_schematic(first_sch, template_brd)
     for part in board.get_elements():
         if part.name in component_positions:
@@ -282,7 +288,7 @@ def main(arguments):
 
     # do board outline
 
-    board.write('combined.brd')
+    board.write(pyPath + 'combined.brd')
 
     # do placement
 
@@ -297,7 +303,7 @@ def main(arguments):
 
     sch_file_name = 'combined.sch'
     print('Writing out full schematic:', sch_file_name)
-    first_sch.write(sch_file_name)
+    first_sch.write(pyPath + sch_file_name)
 
 
 if __name__ == '__main__':
