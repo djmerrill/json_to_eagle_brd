@@ -7,11 +7,10 @@ Builds EAGLE boards for Appliancizer.
     Must add "part name field to connector.partpositions"
 
 Usage:
-  builder.py [-i | -v | --debug] JSON_FILE
+  builder.py [--debug] [-i] JSON_FILE
 
 Options:
   --debug    Debugging output.
-  -v         Verbose output.
   -i         Next argument is input.
 """
 
@@ -20,6 +19,8 @@ import json
 import os
 from docopt import docopt
 from Swoop import Swoop
+
+debug_mode = False
 
 def rebuildBoardConnections(sch, brd):
     """
@@ -143,12 +144,14 @@ def build_board_from_schematic(sch, template_brd):
 
 
 def debug_print(*args, sep=' ', end='\n', file=None):
-    print(*args, sep=sep, end=end, file=file)
+    if debug_mode is True:
+        print(*args, sep=sep, end=end, file=file)
 
 
 def main(arguments):
-    debug_mode = arguments['--debug'] or arguments['-v']
-
+    global debug_mode 
+    debug_mode = arguments['--debug']
+    
     # Python program path
     pyPath = os.path.dirname(os.path.realpath(__file__)) + "/"
 
@@ -169,7 +172,7 @@ def main(arguments):
         debug_print(module_name, module_info)
 
         schematic_name = module_info['schematicName']
-        print('Schematic name: '+ schematic_name)
+        debug_print('Schematic name: '+ schematic_name)
         if schematic_name not in schematic_bases: # get the base schematic
             schematic_bases[schematic_name] = Swoop.EagleFile.from_file(pyPath + schematic_name + '.sch')
         unique_schematics[module_name] = schematic_bases[schematic_name].clone() # save a copy for the module
@@ -182,7 +185,7 @@ def main(arguments):
 
                 for net_name, connection in interface_info.items(): # each entry is a potential net
                     if net_name in net_names:
-                        print('Connecting net:', net_name, 'to', connection)
+                        debug_print('Connecting net:', net_name, 'to', connection)
                         # get the net
                         net = (Swoop.
                             From(unique_schematics[module_name]).
@@ -205,7 +208,7 @@ def main(arguments):
             if 'INTERNAL' in net.get_name() or '$' in net.get_name():
                 debug_print('It does...')
                 new_name = net.get_name() + '__' + module_name
-                print('Changing to name: ' + str(new_name))
+                debug_print('Changing to name: ' + str(new_name))
                 net.set_name(new_name)
 
         part_positions = device_spec['modules'][module_name]['partsPosition']
@@ -218,9 +221,9 @@ def main(arguments):
 
         # make components unique
         for part in Swoop.From(unique_schematics[module_name]).get_parts():
-            print('Looking at part:', part)
+            debug_print('Looking at part:', part)
             old_name = part.name
-            print('Name:', old_name)
+            debug_print('Name:', old_name)
             unique_schematics[module_name].remove_part(part)
             part.name = old_name.upper() + '_' + module_name.upper()
             unique_schematics[module_name].add_part(part)
@@ -228,22 +231,22 @@ def main(arguments):
 
 
             for instance in Swoop.From(unique_schematics[module_name]).get_sheets().get_instances():
-                    print(instance.part)
+                    debug_print(instance.part)
                     if instance.part == old_name:
                         instance.part = part.name
 
 
             for pinref in Swoop.From(unique_schematics[module_name]).get_sheets().get_nets().get_segments().get_pinrefs():
-                print('pinref:', pinref)
+                debug_print('pinref:', pinref)
                 if pinref.part == old_name:
                     pinref.part = part.name
 
-        print('Renamed all parts, verifying')
+        debug_print('Renamed all parts, verifying')
 
         for part in Swoop.From(unique_schematics[module_name]).get_parts():
-            print('Looking at part:', part)
+            debug_print('Looking at part:', part)
             name = part.name
-            print('Name:', name)
+            debug_print('Name:', name)
 
 
     # concat sheets together
@@ -256,25 +259,25 @@ def main(arguments):
     # get the rest of the sheets
     for module_name, schematic in unique_schematics.items():
         if schematic == first_sch:
-            print('Not adding first_sch')
+            debug_print('Not adding first_sch')
             continue
-        print(module_name, schematic)
+        debug_print(module_name, schematic)
         sheets = schematic.get_sheets()
-        print(sheets)
+        debug_print(sheets)
         for sheet in sheets:
             first_sch.add_sheet(sheet)
 
         for part in schematic.get_parts():
             library_name = part.get_library()
-            print(library_name)
+            debug_print(library_name)
             library = schematic.get_library(library_name)
-            print(library)
+            debug_print(library)
             first_sch.add_library(library)
             first_sch.add_part(part)
 
 
     combined_sheets = first_sch.get_sheets()
-    print('combined_sheets:', combined_sheets)
+    debug_print('combined_sheets:', combined_sheets)
 
     # make board
     template_brd_filename = 'template.brd'
@@ -304,12 +307,12 @@ def main(arguments):
     sch_file_name = 'combined.sch'
     print('Writing out full schematic:', sch_file_name)
     first_sch.write(pyPath + sch_file_name)
+    return 0; # Succesfuly exit
 
 
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='Appliancizer Builder v1.0')
-    print(arguments)
-    print(Swoop)
+    debug_print(arguments)
     main(arguments)
 
 
