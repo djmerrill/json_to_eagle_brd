@@ -3,5 +3,4 @@ COMBINED.brd
 COMBINED.pro
 ROUTED.brd
 ROUTED.pro
-GERBER/*
-!.gitignore
+GERBER/ROUTED.*
