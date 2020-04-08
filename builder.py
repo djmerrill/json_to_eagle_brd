@@ -17,6 +17,7 @@ Options:
 
 import json
 import os
+import shutil
 from docopt import docopt
 from Swoop import Swoop
 
@@ -155,6 +156,12 @@ def main(arguments):
     # Python program path
     pyPath = os.path.dirname(os.path.realpath(__file__)) + "/"
 
+    # Delete output file if exist
+    if os.path.exists(pyPath + "COMBINED.brd"):
+        os.remove(pyPath + "COMBINED.brd")
+    if os.path.exists(pyPath + "COMBINED.pro"):
+        os.remove(pyPath + "COMBINED.pro")
+
     if arguments['-i'] is True:
         device_spec = json.loads(arguments['JSON_FILE'])
     else:
@@ -289,24 +296,64 @@ def main(arguments):
             part.y = component_positions[part.name][1]
 
 
-    # do board outline
+    # Board outline
+    pcbHeight = device_spec["pcbHeight"]
+    pcbWidth = device_spec["pcbWidth"]
 
-    board.write(pyPath + 'combined.brd')
+    borderLeft = (Swoop.Wire()
+        .set_layer("Dimension")
+        .set_x1(0)
+        .set_y1(0)
+        .set_x2(0)
+        .set_y2(pcbHeight)
+        .set_width(0.2)
+        .set_curve(0.0))
 
-    # do placement
+    borderTop = (Swoop.Wire()
+        .set_layer("Dimension")
+        .set_x1(0)
+        .set_y1(pcbHeight)
+        .set_x2(pcbWidth)
+        .set_y2(pcbHeight)
+        .set_width(0.2)
+        .set_curve(0.0))
 
-    # do routing
+    borderRight = (Swoop.Wire()
+        .set_layer("Dimension")
+        .set_x1(pcbWidth)
+        .set_y1(pcbHeight)
+        .set_x2(pcbWidth)
+        .set_y2(0)
+        .set_width(0.2)
+        .set_curve(0.0))
 
-    # do CAM
+    borderBottom = (Swoop.Wire()
+        .set_layer("Dimension")
+        .set_x1(pcbWidth)
+        .set_y1(0)
+        .set_x2(0)
+        .set_y2(0)
+        .set_width(0.2)
+        .set_curve(0.0))
 
-    # for module_name, sch in unique_schematics.items():
-    #     new_name = module_name + '_test.sch'
-    #     print('Writing out schematic: ', new_name)
-    #     sch.write(new_name)
+    # Add parents:
+    borderLeft.parent = board;
+    borderTop.parent = board;
+    borderRight.parent = board;
+    borderBottom.parent = board;
+    board.plain_elements.append(borderLeft)
+    board.plain_elements.append(borderTop)
+    board.plain_elements.append(borderRight)
+    board.plain_elements.append(borderBottom)
 
-    sch_file_name = 'combined.sch'
-    print('Writing out full schematic:', sch_file_name)
-    first_sch.write(pyPath + sch_file_name)
+    # Write final board file
+    board.write(pyPath + 'COMBINED.brd')
+
+    # Write schematic (Currently not used because of inconsistency warning 
+    # which causes autorouter to stop before executing)
+    # sch_file_name = 'combined.sch'
+    # print('Writing out full schematic:', sch_file_name)
+    # first_sch.write(pyPath + sch_file_name)
     return 0; # Succesfuly exit
 
 

@@ -1022,39 +1022,41 @@ by exp-lbrs.ulp</description>
 <wire x1="-22.86" y1="15.24" x2="-22.86" y2="17.78" width="0.1524" layer="91"/>
 <label x="-25.4" y="17.78" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="GND" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="GND@39"/>
-<wire x1="-17.78" y1="-33.02" x2="-22.86" y2="-33.02" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-33.02" x2="-22.86" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="GND@34"/>
-<wire x1="-17.78" y1="-30.48" x2="-22.86" y2="-30.48" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-30.48" x2="-22.86" y2="-33.02" width="0.1524" layer="91"/>
-<junction x="-22.86" y="-33.02"/>
-<pinref part="J1" gate="G$1" pin="GND@30"/>
-<wire x1="-17.78" y1="-27.94" x2="-22.86" y2="-27.94" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-27.94" x2="-22.86" y2="-30.48" width="0.1524" layer="91"/>
-<junction x="-22.86" y="-30.48"/>
-<pinref part="J1" gate="G$1" pin="GND@25"/>
-<wire x1="-17.78" y1="-25.4" x2="-22.86" y2="-25.4" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-25.4" x2="-22.86" y2="-27.94" width="0.1524" layer="91"/>
-<junction x="-22.86" y="-27.94"/>
-<pinref part="J1" gate="G$1" pin="GND@20"/>
-<wire x1="-17.78" y1="-22.86" x2="-22.86" y2="-22.86" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-22.86" x2="-22.86" y2="-25.4" width="0.1524" layer="91"/>
-<junction x="-22.86" y="-25.4"/>
-<pinref part="J1" gate="G$1" pin="GND@14"/>
-<wire x1="-17.78" y1="-20.32" x2="-22.86" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-20.32" x2="-22.86" y2="-22.86" width="0.1524" layer="91"/>
-<junction x="-22.86" y="-22.86"/>
-<pinref part="J1" gate="G$1" pin="GND@9"/>
-<wire x1="-17.78" y1="-17.78" x2="-22.86" y2="-17.78" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-17.78" x2="-22.86" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="-22.86" y="-20.32"/>
 <pinref part="J1" gate="G$1" pin="GND@6"/>
-<wire x1="-17.78" y1="-15.24" x2="-22.86" y2="-15.24" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-15.24" x2="-22.86" y2="-17.78" width="0.1524" layer="91"/>
-<junction x="-22.86" y="-17.78"/>
-<label x="-25.4" y="-38.1" size="1.778" layer="95"/>
+<wire x1="-17.78" y1="-15.24" x2="-20.32" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-15.24" x2="-20.32" y2="-17.78" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="GND@9"/>
+<wire x1="-20.32" y1="-17.78" x2="-20.32" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-20.32" x2="-20.32" y2="-22.86" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-22.86" x2="-20.32" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-25.4" x2="-20.32" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-27.94" x2="-20.32" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-30.48" x2="-20.32" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-33.02" x2="-20.32" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="-17.78" x2="-20.32" y2="-17.78" width="0.1524" layer="91"/>
+<junction x="-20.32" y="-17.78"/>
+<pinref part="J1" gate="G$1" pin="GND@14"/>
+<wire x1="-17.78" y1="-20.32" x2="-20.32" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="-20.32" y="-20.32"/>
+<pinref part="J1" gate="G$1" pin="GND@20"/>
+<wire x1="-17.78" y1="-22.86" x2="-20.32" y2="-22.86" width="0.1524" layer="91"/>
+<junction x="-20.32" y="-22.86"/>
+<pinref part="J1" gate="G$1" pin="GND@25"/>
+<wire x1="-17.78" y1="-25.4" x2="-20.32" y2="-25.4" width="0.1524" layer="91"/>
+<junction x="-20.32" y="-25.4"/>
+<pinref part="J1" gate="G$1" pin="GND@30"/>
+<wire x1="-17.78" y1="-27.94" x2="-20.32" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="-20.32" y="-27.94"/>
+<pinref part="J1" gate="G$1" pin="GND@34"/>
+<wire x1="-17.78" y1="-30.48" x2="-20.32" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="-20.32" y="-30.48"/>
+<pinref part="J1" gate="G$1" pin="GND@39"/>
+<wire x1="-17.78" y1="-33.02" x2="-20.32" y2="-33.02" width="0.1524" layer="91"/>
+<junction x="-20.32" y="-33.02"/>
+<label x="-22.86" y="-38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
