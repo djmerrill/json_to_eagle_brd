@@ -4,4 +4,4 @@ COMBINED.pro
 ROUTED.brd
 ROUTED.pro
 GERBER/*
-!GERBER/.gitkeep 
+!.gitignore
