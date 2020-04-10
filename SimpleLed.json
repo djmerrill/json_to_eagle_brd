@@ -1,0 +1,87 @@
+{
+  "pcbHeight": 24,
+  "pcbWidth": 84,
+  "connector": {
+    "schematicName": "connector_raspberrypi",
+    "netsAvailabe": [
+      "4",
+      "17",
+      "27",
+      "22",
+      "5",
+      "6",
+      "13",
+      "26",
+      "18",
+      "23",
+      "24",
+      "25",
+      "12",
+      "16",
+      "19",
+      "20",
+      "21",
+      "2",
+      "3",
+      "9",
+      "10",
+      "11",
+      "8",
+      "14",
+      "15",
+      "3.3V",
+      "5V"
+    ],
+    "partsPosition": {
+      "part_0": {
+        "componentName": "J1",
+        "componentX": 41.5,
+        "componentY": 3.5
+      }
+    }
+  },
+  "modules": {
+    "module_0": {
+      "schematicName": "led_thruhole",
+      "interfaces": {
+        "iface_0": {
+          "type": "gpio",
+          "GPIO": "4"
+        }
+      },
+      "partsPosition": {
+        "part_0": {
+          "componentName": "LED1",
+          "componentX": 8.5,
+          "componentY": 11.5
+        },
+        "part_1": {
+          "componentName": "R1",
+          "componentX": 17.6,
+          "componentY": 10.8
+        }
+      }
+    },
+    "module_1": {
+      "schematicName": "tactile_push_button_smd",
+      "interfaces": {
+        "iface_0": {
+          "type": "gpio",
+          "GPIO": "17"
+        }
+      },
+      "partsPosition": {
+        "part_0": {
+          "componentName": "S1",
+          "componentX": 34.75,
+          "componentY": 13
+        },
+        "part_1": {
+          "componentName": "R1",
+          "componentX": 48.6,
+          "componentY": 14.8
+        }
+      }
+    }
+  }
+}
