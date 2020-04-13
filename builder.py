@@ -181,7 +181,7 @@ def main(arguments):
         schematic_name = module_info['schematicName']
         debug_print('Schematic name: '+ schematic_name)
         if schematic_name not in schematic_bases: # get the base schematic
-            schematic_bases[schematic_name] = Swoop.EagleFile.from_file(pyPath + schematic_name + '.sch')
+            schematic_bases[schematic_name] = Swoop.EagleFile.from_file(pyPath + "MODULES/" + schematic_name + '.sch')
         unique_schematics[module_name] = schematic_bases[schematic_name].clone() # save a copy for the module
 
         renamed_nets[module_name] = set()
@@ -345,6 +345,60 @@ def main(arguments):
     board.plain_elements.append(borderTop)
     board.plain_elements.append(borderRight)
     board.plain_elements.append(borderBottom)
+
+
+    # Add Top Ground Pour
+    TopGNDPour = (Swoop.Polygon()
+    .set_layer("Top")
+    .set_isolate(0.3048)
+    .set_width(0.2)
+    .set_thermals(False)
+    .add_vertex(
+      Swoop.Vertex()
+      .set_x(pcbWidth)
+      .set_y(pcbHeight))
+    .add_vertex(
+      Swoop.Vertex()
+      .set_x(0)
+      .set_y(pcbHeight))
+    .add_vertex(
+      Swoop.Vertex()
+      .set_x(0)
+      .set_y(0))
+    .add_vertex(
+      Swoop.Vertex()
+      .set_x(pcbWidth)
+      .set_y(0),
+    ))
+    TopGNDPour.parent = board.signals["GND"]; # Add Parent
+    board.signals["GND"].polygons.append(TopGNDPour);
+
+    # Add Bottom Ground Pour
+    BottomGNDPour = (Swoop.Polygon()
+    .set_layer("Bottom")
+    .set_isolate(0.3048)
+    .set_width(0.2)
+    .set_thermals(False)
+    .add_vertex(
+      Swoop.Vertex()
+      .set_x(pcbWidth)
+      .set_y(pcbHeight))
+    .add_vertex(
+      Swoop.Vertex()
+      .set_x(0)
+      .set_y(pcbHeight))
+    .add_vertex(
+      Swoop.Vertex()
+      .set_x(0)
+      .set_y(0))
+    .add_vertex(
+      Swoop.Vertex()
+      .set_x(pcbWidth)
+      .set_y(0),
+    ))
+    BottomGNDPour.parent = board.signals["GND"]; # Add Parent
+    board.signals["GND"].polygons.append(BottomGNDPour);
+
 
     # Write final board file
     board.write(pyPath + 'COMBINED.brd')
