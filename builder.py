@@ -50,7 +50,10 @@ def rebuildBoardConnections(sch, brd):
                        get_segments().
                        get_pinrefs()):
 
-            if sch.get_part(pinref.part).find_device().get_package() is None:
+            try:
+                if sch.get_part(pinref.part).find_device().get_package() is None:
+                    continue
+            except:
                 continue
 
             pads = (Swoop.From(sch).
@@ -87,7 +90,10 @@ def propagatePartToBoard(part, brd):
     :rtype: :code:`None`
 
     """
-    if part.find_device().get_package() is None:
+    try:
+        if part.find_device().get_package() is None:
+            return
+    except:
         return
     
     if part.find_package() is None:
@@ -136,7 +142,6 @@ def build_board_from_schematic(sch, template_brd):
     :param brd: a template :class:`BoardFile`
     :returns: A :class:`BoardFile` object that is consistent with the schematic.
     """
-
     for part in sch.get_parts():
         propagatePartToBoard(part, template_brd)
 

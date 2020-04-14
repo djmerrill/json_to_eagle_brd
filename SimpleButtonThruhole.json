@@ -1,5 +1,5 @@
 {
-  "pcbHeight": 24,
+  "pcbHeight": -24,
   "pcbWidth": 56,
   "connector": {
     "schematicName": "connector_raspberrypi",
@@ -36,7 +36,7 @@
       "part_0": {
         "componentName": "J1",
         "componentX": 26.5,
-        "componentY": 3.5
+        "componentY": -3.5
       }
     }
   },
@@ -53,12 +53,12 @@
         "part_0": {
           "componentName": "S1",
           "componentX": 10,
-          "componentY": 15
+          "componentY": -15
         },
         "part_1": {
           "componentName": "R1",
-          "componentX": 16.6,
-          "componentY": 14.8
+          "componentX": 22,
+          "componentY": -14.8
         }
       }
     }

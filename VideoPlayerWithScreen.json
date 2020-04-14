@@ -1,6 +1,6 @@
 {
-  "pcbHeight": -82,
-  "pcbWidth": 165,
+  "pcbHeight": -178,
+  "pcbWidth": 182,
   "connector": {
     "schematicName": "connector_raspberrypi",
     "netsAvailabe": [
@@ -35,8 +35,8 @@
     "partsPosition": {
       "part_0": {
         "componentName": "J1",
-        "componentX": 69.5,
-        "componentY": -5.5
+        "componentX": 87.5,
+        "componentY": -4.5
       }
     }
   },
@@ -45,10 +45,8 @@
       "schematicName": "motorized_potentiometer",
       "interfaces": {
         "iface_0": {
-          "device": "/dev/i2c-1",
-          "type": "i2c",
-          "SDA": "2",
-          "SCL": "3"
+          "type": "gpio",
+          "MOTORA": "4"
         },
         "iface_1": {
           "type": "gpio",
@@ -68,23 +66,23 @@
       "partsPosition": {
         "part_0": {
           "componentName": "U1",
-          "componentX": 84,
-          "componentY": -60
+          "componentX": 86,
+          "componentY": -158
         },
         "part_1": {
           "componentName": "U2",
-          "componentX": 111.5,
-          "componentY": -26
+          "componentX": 126.5,
+          "componentY": -127
         },
         "part_2": {
           "componentName": "U3",
-          "componentX": 69,
-          "componentY": -26.5
+          "componentX": 80,
+          "componentY": -128.5
         },
         "part_3": {
           "componentName": "U4",
-          "componentX": 29.5,
-          "componentY": -25.5
+          "componentX": 33.5,
+          "componentY": -125.5
         }
       }
     },
@@ -99,13 +97,13 @@
       "partsPosition": {
         "part_0": {
           "componentName": "S1",
-          "componentX": 145.75,
-          "componentY": -8
+          "componentX": 172,
+          "componentY": -38
         },
         "part_1": {
           "componentName": "R1",
-          "componentX": 144.25,
-          "componentY": -14
+          "componentX": 172,
+          "componentY": -43
         }
       }
     },
@@ -120,13 +118,13 @@
       "partsPosition": {
         "part_0": {
           "componentName": "S1",
-          "componentX": 144.75,
-          "componentY": -21
+          "componentX": 172,
+          "componentY": -67
         },
         "part_1": {
           "componentName": "R1",
-          "componentX": 145.25,
-          "componentY": -27
+          "componentX": 171.25,
+          "componentY": -73
         }
       }
     },
@@ -141,13 +139,13 @@
       "partsPosition": {
         "part_0": {
           "componentName": "S1",
-          "componentX": 145.75,
-          "componentY": -34
+          "componentX": 172,
+          "componentY": -51
         },
         "part_1": {
           "componentName": "R1",
-          "componentX": 146.25,
-          "componentY": -40
+          "componentX": 172,
+          "componentY": -57
         }
       }
     }
