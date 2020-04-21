@@ -158,77 +158,6 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="motorizedpot">
-<packages>
-<package name="MOTORIZEDPOT">
-<pad name="6" x="63.75" y="-1.75" drill="1"/>
-<pad name="7" x="63.75" y="5.25" drill="1"/>
-<pad name="5" x="63.75" y="-5.25" drill="1"/>
-<pad name="2" x="-63.75" y="1.75" drill="1"/>
-<pad name="3" x="-63.75" y="-1.75" drill="1"/>
-<pad name="1" x="-63.75" y="5.25" drill="1"/>
-<pad name="4" x="-63.75" y="-5.25" drill="1"/>
-<pad name="8" x="38.8" y="0" drill="2"/>
-<pad name="9" x="-38.8" y="0" drill="2"/>
-<wire x1="-63.75" y1="-8" x2="-63.75" y2="8" width="0.127" layer="21"/>
-<wire x1="-63.75" y1="8" x2="63.75" y2="8" width="0.127" layer="21"/>
-<wire x1="63.75" y1="8" x2="63.75" y2="-8" width="0.127" layer="21"/>
-<wire x1="63.75" y1="-8" x2="-63.75" y2="-8" width="0.127" layer="21"/>
-<wire x1="-81" y1="-8.1" x2="-64.95" y2="-8.1" width="0.127" layer="21"/>
-<wire x1="-64.95" y1="-8.1" x2="71" y2="-8.1" width="0.127" layer="21"/>
-<wire x1="71" y1="-8.1" x2="71" y2="-15.5" width="0.127" layer="21"/>
-<wire x1="71" y1="-15.5" x2="-81" y2="-15.5" width="0.127" layer="21"/>
-<wire x1="-81" y1="-8.1" x2="-81" y2="-15.5" width="0.127" layer="21"/>
-<wire x1="-81" y1="-8.1" x2="-81" y2="20" width="0.127" layer="21"/>
-<wire x1="-81" y1="20" x2="-64.95" y2="20" width="0.127" layer="21"/>
-<wire x1="-64.95" y1="20" x2="-63.75" y2="20" width="0.127" layer="21"/>
-<wire x1="-63.75" y1="20" x2="-63.75" y2="8" width="0.127" layer="21"/>
-<wire x1="-64.95" y1="-8.1" x2="-64.95" y2="20" width="0.127" layer="21"/>
-<pad name="10" x="-53.34" y="11.43" drill="0.6"/>
-<pad name="11" x="-57.15" y="11.43" drill="0.6"/>
-<text x="-53.34" y="8.89" size="1.27" layer="21">Motor+</text>
-<text x="-58.42" y="8.89" size="1.27" layer="21">GND</text>
-</package>
-</packages>
-<symbols>
-<symbol name="MOTORIZEDPOT">
-<pin name="GND" x="-15.24" y="0" length="middle"/>
-<pin name="ANALOG" x="-15.24" y="-7.62" length="middle"/>
-<pin name="VCC" x="-15.24" y="5.08" length="middle"/>
-<pin name="TOUCH" x="-15.24" y="2.54" length="middle"/>
-<wire x1="-10.16" y1="7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
-<wire x1="5.08" y1="7.62" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="-10.16" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
-<text x="-10.16" y="7.62" size="1.27" layer="95">&gt;NAME</text>
-<text x="-10.16" y="-12.7" size="1.27" layer="95">&gt;VALUE</text>
-<pin name="M+" x="-15.24" y="-2.54" length="middle"/>
-<pin name="M-" x="-15.24" y="-5.08" length="middle"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MOTORIZEDPOT">
-<gates>
-<gate name="G$1" symbol="MOTORIZEDPOT" x="2.54" y="-5.08"/>
-</gates>
-<devices>
-<device name="" package="MOTORIZEDPOT">
-<connects>
-<connect gate="G$1" pin="ANALOG" pad="4"/>
-<connect gate="G$1" pin="GND" pad="3"/>
-<connect gate="G$1" pin="M+" pad="10"/>
-<connect gate="G$1" pin="M-" pad="11"/>
-<connect gate="G$1" pin="TOUCH" pad="6"/>
-<connect gate="G$1" pin="VCC" pad="5"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="ads1X15">
 <packages>
 <package name="ADS1X15">
@@ -3087,6 +3016,79 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="motorized_potentiometer">
+<description>Generated from &lt;b&gt;motorized_potentiometer.sch&lt;/b&gt;&lt;p&gt;
+by exp-lbrs.ulp</description>
+<packages>
+<package name="MOTORIZEDPOT_MOTORIZEDPOT">
+<wire x1="-57.75" y1="-10" x2="-57.75" y2="6" width="0.127" layer="21"/>
+<wire x1="-57.75" y1="6" x2="69.75" y2="6" width="0.127" layer="21"/>
+<wire x1="69.75" y1="6" x2="69.75" y2="-10" width="0.127" layer="21"/>
+<wire x1="69.75" y1="-10" x2="-57.75" y2="-10" width="0.127" layer="21"/>
+<wire x1="-75" y1="-10.1" x2="-58.95" y2="-10.1" width="0.127" layer="21"/>
+<wire x1="-58.95" y1="-10.1" x2="77" y2="-10.1" width="0.127" layer="21"/>
+<wire x1="77" y1="-10.1" x2="77" y2="-17.5" width="0.127" layer="21"/>
+<wire x1="77" y1="-17.5" x2="-75" y2="-17.5" width="0.127" layer="21"/>
+<wire x1="-75" y1="-10.1" x2="-75" y2="-17.5" width="0.127" layer="21"/>
+<wire x1="-75" y1="-10.1" x2="-75" y2="18" width="0.127" layer="21"/>
+<wire x1="-75" y1="18" x2="-58.95" y2="18" width="0.127" layer="21"/>
+<wire x1="-58.95" y1="18" x2="-57.75" y2="18" width="0.127" layer="21"/>
+<wire x1="-57.75" y1="18" x2="-57.75" y2="6" width="0.127" layer="21"/>
+<wire x1="-58.95" y1="-10.1" x2="-58.95" y2="18" width="0.127" layer="21"/>
+<pad name="1" x="-57.75" y="3.25" drill="1"/>
+<pad name="2" x="-57.75" y="-0.25" drill="1"/>
+<pad name="3" x="-57.75" y="-3.75" drill="1"/>
+<pad name="4" x="-57.75" y="-7.25" drill="1"/>
+<pad name="5" x="69.75" y="-7.25" drill="1"/>
+<pad name="6" x="69.75" y="-3.75" drill="1"/>
+<pad name="7" x="69.75" y="3.25" drill="1"/>
+<pad name="8" x="44.8" y="-2" drill="2"/>
+<pad name="9" x="-32.8" y="-2" drill="2"/>
+<pad name="10" x="-47.34" y="9.43" drill="0.6"/>
+<pad name="11" x="-51.15" y="9.43" drill="0.6"/>
+<text x="-47.34" y="6.89" size="1.27" layer="21">Motor+</text>
+<text x="-52.42" y="6.89" size="1.27" layer="21">GND</text>
+</package>
+</packages>
+<symbols>
+<symbol name="MOTORIZEDPOT_MOTORIZEDPOT">
+<wire x1="-10.16" y1="7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="7.62" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-10.16" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
+<pin name="ANALOG" x="-15.24" y="-7.62" length="middle"/>
+<pin name="GND" x="-15.24" y="0" length="middle"/>
+<pin name="M+" x="-15.24" y="-2.54" length="middle"/>
+<pin name="M-" x="-15.24" y="-5.08" length="middle"/>
+<pin name="TOUCH" x="-15.24" y="2.54" length="middle"/>
+<pin name="VCC" x="-15.24" y="5.08" length="middle"/>
+<text x="-10.16" y="7.62" size="1.27" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-12.7" size="1.27" layer="95">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MOTORIZEDPOT_MOTORIZEDPOT">
+<gates>
+<gate name="G$1" symbol="MOTORIZEDPOT_MOTORIZEDPOT" x="2.54" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="MOTORIZEDPOT_MOTORIZEDPOT">
+<connects>
+<connect gate="G$1" pin="ANALOG" pad="4"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="M+" pad="10"/>
+<connect gate="G$1" pin="M-" pad="11"/>
+<connect gate="G$1" pin="TOUCH" pad="6"/>
+<connect gate="G$1" pin="VCC" pad="5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3097,7 +3099,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </class>
 </classes>
 <parts>
-<part name="U1" library="motorizedpot" deviceset="MOTORIZEDPOT" device=""/>
+<part name="U1" library="motorized_potentiometer" deviceset="MOTORIZEDPOT_MOTORIZEDPOT" device=""/>
 <part name="U2" library="ads1X15" deviceset="ADS1X15" device=""/>
 <part name="U3" library="AT42QT1010" deviceset="AT42QT1010" device=""/>
 <part name="U4" library="tb6612fng" deviceset="TB6612FNG" device=""/>
