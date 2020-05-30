@@ -3035,17 +3035,17 @@ by exp-lbrs.ulp</description>
 <wire x1="-58.95" y1="18" x2="-57.75" y2="18" width="0.127" layer="21"/>
 <wire x1="-57.75" y1="18" x2="-57.75" y2="6" width="0.127" layer="21"/>
 <wire x1="-58.95" y1="-10.1" x2="-58.95" y2="18" width="0.127" layer="21"/>
-<pad name="1" x="-57.75" y="3.25" drill="1"/>
-<pad name="2" x="-57.75" y="-0.25" drill="1"/>
-<pad name="3" x="-57.75" y="-3.75" drill="1"/>
-<pad name="4" x="-57.75" y="-7.25" drill="1"/>
-<pad name="5" x="69.75" y="-7.25" drill="1"/>
-<pad name="6" x="69.75" y="-3.75" drill="1"/>
-<pad name="7" x="69.75" y="3.25" drill="1"/>
+<pad name="1" x="-57.75" y="3.25" drill="1.4"/>
+<pad name="2" x="-57.75" y="-0.25" drill="1.4"/>
+<pad name="3" x="-57.75" y="-3.75" drill="1.4"/>
+<pad name="4" x="-57.75" y="-7.25" drill="1.4"/>
+<pad name="5" x="69.75" y="-7.25" drill="1.4"/>
+<pad name="6" x="69.75" y="-3.75" drill="1.4"/>
+<pad name="7" x="69.75" y="3.25" drill="1.4"/>
 <pad name="8" x="44.8" y="-2" drill="2"/>
-<pad name="9" x="-32.8" y="-2" drill="2"/>
-<pad name="10" x="-47.34" y="9.43" drill="0.6"/>
-<pad name="11" x="-51.15" y="9.43" drill="0.6"/>
+<pad name="9" x="-38.8" y="-2" drill="2"/>
+<pad name="10" x="-47.34" y="9.43" drill="1"/>
+<pad name="11" x="-51.15" y="9.43" drill="1"/>
 <text x="-47.34" y="6.89" size="1.27" layer="21">Motor+</text>
 <text x="-52.42" y="6.89" size="1.27" layer="21">GND</text>
 </package>

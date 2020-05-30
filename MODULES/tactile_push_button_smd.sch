@@ -156,76 +156,6 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="PTS645SL50SMTR92LFS">
-<description>&lt;PTS645SL50SMTR92LFS (Tactile Switches)&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="PTS645SMT">
-<description>&lt;b&gt;pts645&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-3.975" y="2.25" dx="1.55" dy="1.3" layer="1"/>
-<smd name="2" x="3.975" y="2.25" dx="1.55" dy="1.3" layer="1"/>
-<smd name="3" x="-3.975" y="-2.25" dx="1.55" dy="1.3" layer="1"/>
-<smd name="4" x="3.975" y="-2.25" dx="1.55" dy="1.3" layer="1"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<circle x="-5.688" y="2.343" radius="0.05143125" width="0.254" layer="25"/>
-<wire x1="-3" y1="3" x2="3" y2="3" width="0.254" layer="51"/>
-<wire x1="3" y1="3" x2="3" y2="-3" width="0.254" layer="51"/>
-<wire x1="3" y1="-3" x2="-3" y2="-3" width="0.254" layer="51"/>
-<wire x1="-3" y1="-3" x2="-3" y2="3" width="0.254" layer="51"/>
-<wire x1="-3" y1="3" x2="-3" y2="-3" width="0.254" layer="21"/>
-<wire x1="-3" y1="-3" x2="3" y2="-3" width="0.254" layer="21"/>
-<wire x1="3" y1="-3" x2="3" y2="3" width="0.254" layer="21"/>
-<wire x1="3" y1="3" x2="-3" y2="3" width="0.254" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="PTS645SL50SMTR92LFS">
-<wire x1="5.08" y1="2.54" x2="15.24" y2="2.54" width="0.254" layer="94"/>
-<wire x1="15.24" y1="-5.08" x2="15.24" y2="2.54" width="0.254" layer="94"/>
-<wire x1="15.24" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<text x="16.51" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="16.51" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="1" x="0" y="0" length="middle"/>
-<pin name="2" x="20.32" y="0" length="middle" rot="R180"/>
-<pin name="3" x="0" y="-2.54" length="middle"/>
-<pin name="4" x="20.32" y="-2.54" length="middle" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="PTS645SL50SMTR92LFS" prefix="S">
-<description>&lt;b&gt;PTS645SL50SMTR92LFS (Tactile Switches)&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://www.ckswitches.com/media/1471/pts645.pdf"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="PTS645SL50SMTR92LFS" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="PTS645SMT">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="PTS645SL50SMTR92LFS (Tactile Switches)" constant="no"/>
-<attribute name="HEIGHT" value="mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="C &amp; K COMPONENTS" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="PTS645SL50SMTR92LFS" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="611-PTS645SL50SMTR92" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=611-PTS645SL50SMTR92" constant="no"/>
-<attribute name="RS_PART_NUMBER" value="" constant="no"/>
-<attribute name="RS_PRICE-STOCK" value="" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="SparkFun-Resistors" urn="urn:adsk.eagle:library:532">
 <description>&lt;h3&gt;SparkFun Resistors&lt;/h3&gt;
 This library contains resistors. Reference designator:R. 
@@ -587,6 +517,69 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="tactile_push_button_smd">
+<description>Generated from &lt;b&gt;tactile_push_button_smd.sch&lt;/b&gt;&lt;p&gt;
+by exp-lbrs.ulp</description>
+<packages>
+<package name="PTS645SL50SMTR92LFS_PTS645SMT">
+<description>&lt;b&gt;pts645&lt;/b&gt;&lt;br&gt;</description>
+<circle x="-5.688" y="2.343" radius="0.05143125" width="0.254" layer="25"/>
+<wire x1="-3" y1="3" x2="3" y2="3" width="0.254" layer="51"/>
+<wire x1="3" y1="3" x2="3" y2="-3" width="0.254" layer="51"/>
+<wire x1="3" y1="-3" x2="-3" y2="-3" width="0.254" layer="51"/>
+<wire x1="-3" y1="-3" x2="-3" y2="3" width="0.254" layer="51"/>
+<wire x1="-3" y1="3" x2="-3" y2="-3" width="0.254" layer="21"/>
+<wire x1="-3" y1="-3" x2="3" y2="-3" width="0.254" layer="21"/>
+<wire x1="3" y1="-3" x2="3" y2="3" width="0.254" layer="21"/>
+<wire x1="3" y1="3" x2="-3" y2="3" width="0.254" layer="21"/>
+<smd name="1" x="-3.975" y="2.25" dx="1.55" dy="1.3" layer="1"/>
+<smd name="2" x="3.975" y="2.25" dx="1.55" dy="1.3" layer="1"/>
+<smd name="3" x="-3.975" y="-2.25" dx="1.55" dy="1.3" layer="1"/>
+<smd name="4" x="3.975" y="-2.25" dx="1.55" dy="1.3" layer="1"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="PTS645SL50SMTR92LFS_PTS645SL50SMTR92LFS">
+<pin name="1" x="-5.08" y="-2.54" visible="off" length="short"/>
+<pin name="2" x="5.08" y="-2.54" visible="off" length="short" rot="R180"/>
+<text x="-3.81" y="2.54" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
+<circle x="-2.54" y="-2.54" radius="0.254" width="0.254" layer="94"/>
+<circle x="2.54" y="-2.54" radius="0.254" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PTS645SL50SMTR92LFS_PTS645SL50SMTR92LFS" prefix="S">
+<description>&lt;b&gt;PTS645SL50SMTR92LFS (Tactile Switches)&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.ckswitches.com/media/1471/pts645.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="PTS645SL50SMTR92LFS_PTS645SL50SMTR92LFS" x="-7.62" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="PTS645SL50SMTR92LFS_PTS645SMT">
+<connects>
+<connect gate="G$1" pin="1" pad="1 2"/>
+<connect gate="G$1" pin="2" pad="3 4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="PTS645SL50SMTR92LFS (Tactile Switches)" constant="no"/>
+<attribute name="HEIGHT" value="mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="C &amp; K COMPONENTS" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="PTS645SL50SMTR92LFS" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="611-PTS645SL50SMTR92" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=611-PTS645SL50SMTR92" constant="no"/>
+<attribute name="RS_PART_NUMBER" value="" constant="no"/>
+<attribute name="RS_PRICE-STOCK" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -597,29 +590,28 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </class>
 </classes>
 <parts>
-<part name="S1" library="PTS645SL50SMTR92LFS" deviceset="PTS645SL50SMTR92LFS" device=""/>
 <part name="R1" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="RESISTOR" device="1206" package3d_urn="urn:adsk.eagle:package:39654/1" value=" "/>
 <part name="SUPPLY1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
 <part name="GND1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="S1" library="tactile_push_button_smd" deviceset="PTS645SL50SMTR92LFS_PTS645SL50SMTR92LFS" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="S1" gate="G$1" x="-12.7" y="2.54" smashed="yes">
-<attribute name="NAME" x="3.81" y="10.16" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="3.81" y="7.62" size="1.778" layer="96" align="center-left"/>
+<instance part="R1" gate="G$1" x="7.62" y="-10.16" smashed="yes" rot="R270">
+<attribute name="NAME" x="9.144" y="-10.16" size="1.778" layer="95" font="vector" rot="R270" align="bottom-center"/>
+<attribute name="VALUE" x="3.556" y="-10.16" size="1.778" layer="96" font="vector" rot="R270" align="top-center"/>
 </instance>
-<instance part="R1" gate="G$1" x="10.16" y="-7.62" smashed="yes" rot="R270">
-<attribute name="NAME" x="11.684" y="-7.62" size="1.778" layer="95" font="vector" rot="R270" align="bottom-center"/>
-<attribute name="VALUE" x="8.636" y="-7.62" size="1.778" layer="96" font="vector" rot="R270" align="top-center"/>
+<instance part="SUPPLY1" gate="G$1" x="7.62" y="15.24" smashed="yes">
+<attribute name="VALUE" x="7.62" y="18.034" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="SUPPLY1" gate="G$1" x="-12.7" y="12.7" smashed="yes">
-<attribute name="VALUE" x="-12.7" y="15.494" size="1.778" layer="96" align="bottom-center"/>
+<instance part="GND1" gate="1" x="7.62" y="-20.32" smashed="yes">
+<attribute name="VALUE" x="7.62" y="-20.574" size="1.778" layer="96" align="top-center"/>
 </instance>
-<instance part="GND1" gate="1" x="10.16" y="-17.78" smashed="yes">
-<attribute name="VALUE" x="10.16" y="-18.034" size="1.778" layer="96" align="top-center"/>
+<instance part="S1" gate="G$1" x="10.16" y="5.08" smashed="yes" rot="R270">
+<attribute name="NAME" x="12.7" y="6.35" size="1.778" layer="95" rot="R270" align="center-left"/>
 </instance>
 </instances>
 <busses>
@@ -627,34 +619,27 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <nets>
 <net name="GPIO" class="0">
 <segment>
-<pinref part="S1" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="2.54" x2="10.16" y2="2.54" width="0.1524" layer="91"/>
+<label x="12.7" y="-2.54" size="1.778" layer="95" xref="yes"/>
 <pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="10.16" y1="2.54" x2="10.16" y2="0" width="0.1524" layer="91"/>
-<pinref part="S1" gate="G$1" pin="4"/>
-<wire x1="10.16" y1="0" x2="10.16" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="7.62" y1="0" x2="10.16" y2="0" width="0.1524" layer="91"/>
-<junction x="10.16" y="0"/>
-<wire x1="10.16" y1="2.54" x2="17.78" y2="2.54" width="0.1524" layer="91"/>
-<junction x="10.16" y="2.54"/>
-<label x="17.78" y="2.54" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="3.3V" class="0">
-<segment>
-<pinref part="S1" gate="G$1" pin="3"/>
-<pinref part="S1" gate="G$1" pin="1"/>
-<wire x1="-12.7" y1="0" x2="-12.7" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="2.54" x2="-12.7" y2="12.7" width="0.1524" layer="91"/>
-<junction x="-12.7" y="2.54"/>
-<pinref part="SUPPLY1" gate="G$1" pin="3.3V"/>
+<pinref part="S1" gate="G$1" pin="2"/>
+<wire x1="7.62" y1="-5.08" x2="7.62" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="0" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="-2.54" x2="7.62" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="7.62" y="-2.54"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="10.16" y1="-12.7" x2="10.16" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-15.24" x2="7.62" y2="-17.78" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="3.3V" class="0">
+<segment>
+<pinref part="SUPPLY1" gate="G$1" pin="3.3V"/>
+<pinref part="S1" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="10.16" x2="7.62" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
